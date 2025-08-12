@@ -48,7 +48,9 @@ else
 fi
 
 # --- 4. Configure Uncomplicated Firewall (UFW) ---
-echo "Configuring the firewall..."
+echo "Installing and configuring the firewall..."
+# Ensure UFW is installed before trying to use it
+apt-get install -y ufw
 # Allow SSH connections. 'OpenSSH' is the profile name.
 ufw allow OpenSSH
 # Enable the firewall without an interactive prompt
@@ -73,4 +75,3 @@ echo "Automatic security updates have been enabled."
 
 
 echo "--- Initial setup complete! ---"
-
